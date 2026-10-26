@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+# ==============================================================================
+# ravn-launch-webapp — Universal Web Application Launcher
+# ==============================================================================
+# Launches a URL in application mode (--app) using the available Chromium-based
+# browser with session isolation on Wayland.
+# ==============================================================================
+
+set -euo pipefail
+
+URL="${1:-}"
+if [[ -z "$URL" ]]; then
+  echo "Uso: ravn-launch-webapp <url> [args...]" >&2
+  exit 1
+fi
+shift || true
+
+resolve_browser() {
+  if [[ -n "${BROWSER:-}" ]] && command -v "$BROWSER" >/dev/null 2>&1; then
+    case "$BROWSER" in
+      *chrome*|*brave*|*edge*|*chromium*|*vivaldi*|*opera*|*helium*)
+        echo "$BROWSER"
+        return 0
+        ;;
+    esac
+  fi
+
+  local candidate
+  for candidate in \
+    google-chrome-stable \
+    google-chrome \
+    brave-bin \
+    brave-browser \
+    brave \
+    microsoft-edge-stable \
+    microsoft-edge \
+    chromium \
+    chromium-browser \
+    helium-browser \
+    vivaldi \
+    opera; do
+    if command -v "$candidate" >/dev/null 2>&1; then
+      echo "$candidate"
+      return 0
+    fi
+  done
+
+  echo ""
+  return 1
+}
+
+BROWSER_CMD="$(resolve_browser || true)"
+
+if [[ -z "$BROWSER_CMD" ]]; then
+  if command -v xdg-open >/dev/null 2>&1; then
+    exec xdg-open "$URL"
+  else
+    echo "Error: No se encontró ningún navegador para ejecutar la webapp: $URL" >&2
+    exit 1
+  fi
+fi
+
+if [[ -n "${WAYLAND_DISPLAY:-}" ]] && command -v uwsm-app >/dev/null 2>&1; then
+  exec setsid uwsm-app -- "$BROWSER_CMD" --app="$URL" "$@"
+else
+  exec setsid "$BROWSER_CMD" --app="$URL" "$@"
+fi

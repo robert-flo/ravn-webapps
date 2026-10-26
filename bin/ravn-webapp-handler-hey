@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# ==============================================================================
+# ravn-webapp-handler-hey — HEY Mail Webapp Protocol Handler
+# ==============================================================================
+
+set -euo pipefail
+
+url="${1:-}"
+web_url="https://app.hey.com"
+
+if [[ "$url" =~ ^mailto: ]]; then
+  email=$(printf '%s\n' "$url" | sed 's/mailto://')
+  web_url="https://app.hey.com/messages/new?to=$email"
+fi
+
+exec ravn-launch-webapp "$web_url"

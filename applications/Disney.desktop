@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Disney
+Exec=ravn-launch-webapp "https://www.disneyplus.com/es-sv"
+Terminal=false
+Type=Application
+Icon=disney
+StartupNotify=true
