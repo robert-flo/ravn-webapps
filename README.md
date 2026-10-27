@@ -31,3 +31,13 @@ make install DESTDIR=/
 ## 📄 Licencia
 
 MIT License — Roberto Flores.
+
+## Iconos que provee omarchy-settings
+
+Este paquete **no** debe instalar ningún archivo que ya instale `omarchy` u
+`omarchy-settings` (pacman aborta con *conflicting files*). Los iconos
+hicolor de basecamp, battle-net, chatgpt, disk-usage, docker, google-contacts,
+google-maps, google-messages, google-photos, hey, imv, omarchy-discord,
+retro-gaming, whatsapp, windows, x, youtube y zoom los trae upstream; los
+`.desktop` de aquí los usan por nombre. El release de
+`omarchy-personal-repo` falla si algún `ravn-*` se solapa con esos paquetes.
