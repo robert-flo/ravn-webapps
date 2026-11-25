@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Wajo Chrome Beta
+Exec=google-chrome-beta --app="https://wajo.ai/fo/"
+Terminal=false
+Icon=wajo
+Categories=Network;
+Keywords=web;webapp;browser;alt-account;chrome-beta;

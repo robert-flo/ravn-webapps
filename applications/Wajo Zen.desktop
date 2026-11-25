@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Wajo Zen
+Exec=zen-browser --new-window https://wajo.ai/fo/
+Terminal=false
+Icon=wajo
+Categories=Network;
+Keywords=web;webapp;browser;alt-account;zen;
