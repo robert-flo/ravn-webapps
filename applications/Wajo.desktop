@@ -1,6 +1,6 @@
 [Desktop Entry]
 Version=1.0
-Name=wajo 25 - chrome
+Name=wajo 25
 Exec=ravn-launch-webapp https://wajo.ai/fo/
 Terminal=false
 Type=Application

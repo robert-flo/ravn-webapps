@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=wajo thi - zen
+Name=wajo thi
 Exec=zen-browser --new-window https://wajo.ai/fo/
 Terminal=false
 Icon=wajo
