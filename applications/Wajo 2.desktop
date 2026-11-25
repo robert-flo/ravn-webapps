@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=wajo fq - edge
+Name=wajo fq
 Exec=microsoft-edge-stable --app="https://wajo.ai/fo/"
 Terminal=false
 Icon=wajo
