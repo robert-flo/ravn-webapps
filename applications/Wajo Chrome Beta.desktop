@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=Wajo Chrome Beta
+Name=wajo qu - beta
 Exec=google-chrome-beta --app="https://wajo.ai/fo/"
 Terminal=false
 Icon=wajo
