@@ -7,3 +7,4 @@ Terminal=false
 Icon=wajo
 Categories=Network;
 Keywords=web;webapp;browser;alt-account;
+StartupWMClass=msedge-wajo.ai__fo_-Default

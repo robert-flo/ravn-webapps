@@ -7,3 +7,4 @@ Terminal=false
 Icon=wajo
 Categories=Network;
 Keywords=web;webapp;browser;alt-account;chrome-beta;
+StartupWMClass=chrome-wajo.ai__fo_-Default

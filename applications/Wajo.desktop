@@ -6,3 +6,4 @@ Terminal=false
 Type=Application
 Icon=wajo
 StartupNotify=true
+StartupWMClass=chrome-wajo.ai__fo_-Profile_1
